@@ -63,7 +63,7 @@ module.exports = {
     respond: (req, res, next) => {
       MongoClient.connect(url, (err, db) => {
         db.collection('contacts')
-          .deleteOne( {'_id': req.params.id}, (err, result) => {
+          .deleteOne( {'_id': Mongo.ObjectId(req.params.id)}, (err, result) => {
             let body = err ? JSON.stringify(err) : result;
             res.send(body);
             console.log(`DELETE: /delete/\n${JSON.stringify(body, null, 2)}`);

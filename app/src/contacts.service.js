@@ -10,7 +10,7 @@ export default ($http) => {
       return $http.put('/api/contacts', model);
     },
     removeC: (model) => {
-      return $http.delete('/api/contacts/' + model._id, model);
+      return $http.delete('/api/contacts/' + model._id);
     }
   };
 };

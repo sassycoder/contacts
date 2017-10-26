@@ -1,0 +1,22 @@
+$border-color: #dc3545;
+
+.contact-form {
+  form {
+    &.ng-dirty.ng-invalid {
+      .ng-invalid-required.ng-invalid.ng-dirty {
+        &.form-control {
+          border-color: $border-color;
+        }
+        ~ .invalid-feedback {
+          display: block;
+        }
+      }
+      .validation-help {
+        display: inline;
+      }
+    }
+    .validation-help {
+      display: none;
+    }
+  }
+}
