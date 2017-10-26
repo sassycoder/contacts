@@ -5,6 +5,12 @@ export default ($http) => {
     },
     retrieve: () => {
       return $http.get('/api/contacts');
+    },
+    update: (model) => {
+      return $http.put('/api/contacts', model);
+    },
+    removeC: (model) => {
+      return $http.delete('/api/contacts/' + model._id, model);
     }
   };
 };

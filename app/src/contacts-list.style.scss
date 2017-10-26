@@ -1,8 +1,11 @@
+@import './bootstrap.min.css';
 $border-color: #0066EE;
 
 .contacts-list {
-  .contact-item {
-    border: $border-color solid .1rem;
-    padding: .2rem;
+  .facet {
+    &[class*="_id"] {
+      display: none;
+    }
+    display: block;
   }
 }
