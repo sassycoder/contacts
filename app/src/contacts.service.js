@@ -9,7 +9,7 @@ export default ($http) => {
     update: (model) => {
       return $http.put('/api/contacts', model);
     },
-    removeC: (model) => {
+    removeContact: (model) => {
       return $http.delete('/api/contacts/' + model._id);
     }
   };

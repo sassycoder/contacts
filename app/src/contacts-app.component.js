@@ -5,14 +5,17 @@ export default {
 `
 <div class="row">
   <div class="col">
-    <contact-form model="$ctrl.model"></contact-form>
+    <contact-form model="formModel" add-contact="onClickedSubmit(item)"></contact-form>
   </div>
   <div class="col">
-    <contacts-list></contacts-list>
+    <contacts-list
+      contacts-data="contactsList"
+      remove-contact="onDeleteContact(item)"
+      update-contact="onUpdateContact(item)">
+    </contacts-list>
   </div>
 </div>
 `,
-  controller: ($scope) => {
-    $scope.model = {};
-  }
+
+controller: 'MainController'
 };

@@ -50,24 +50,16 @@ export default {
       <textarea class="form-control" name="notes" id="notes" rows="3" ng-model="$ctrl.model.notes"></textarea>
     </div>
 
-    <button class="btn btn-primary" type="submit" ng-disabled="contactForm.$invalid" ng-click="onClickedSubmit($ctrl.model)">Add</button>
+    <button class="btn btn-primary" type="submit" ng-disabled="contactForm.$invalid" ng-click="$ctrl.addContact({item: $ctrl.model})">Add</button>
     <small class="text-muted validation-help">
       Please fill in all required fields.
     </small>
   </div>
 </form>
 `,
-  controller: ($scope, $window, ContactsService) => {
-    $scope.ngModel = $scope.ngModel || {};
 
-    $scope.onClickedSubmit = (model) => {
-      console.debug(model);
-      if ($scope.contactForm.$valid) {
-        ContactsService.create(model);
-      }
-    };
-  },
   bindings: {
-    model: '='
+    model: '=',
+    addContact: '&'
   }
 };
